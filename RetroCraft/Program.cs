@@ -9,7 +9,8 @@ namespace RetroCraft
     {
         public static void Main(string[] args)
         {
-            var remote = ParseEndPoint(args[0]);
+            String input = Console.ReadLine();
+            var remote = ParseEndPoint(input);
             var proxy = new Proxy(new IPEndPoint(IPAddress.Loopback, 25564), remote);
             proxy.Start();
 

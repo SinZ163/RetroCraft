@@ -54,6 +54,13 @@ namespace RetroCraft
                 client.Position.X, client.Position.Y + 1.72, client.Position.Z, client.Position.Y + 0.1, 0, 0, false));
             client.SendChat(ChatColors.Yellow + "Conversion complete. Welcome to RetroCraft.");
         }
+
+        internal static void ServerBlockUpdate(RemoteClient client, Proxy proxy, IPacket _packet)
+        {
+            var packet = (ServerSetBlockPacket)_packet;
+
+            client.SendPacket(new Modern.BlockChangePacket(packet.X,(byte)packet.Y,packet.Z,(short)packet.BlockType,0));
+        }
     }
 }
 

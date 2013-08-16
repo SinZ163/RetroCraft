@@ -62,6 +62,7 @@ namespace RetroCraft
         public virtual void SendChat(string text)
         {
             text = string.Format("{{\"text\":\"{0}\"}}", text);
+            text = text.Replace('&', '§');
             SendPacket(new ChatMessagePacket(text));
         }
     }

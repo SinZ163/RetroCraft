@@ -12,6 +12,8 @@ namespace RetroCraft.ClassicHandlers
             proxy.RegisterClassicPacketHandler(LevelDataPacket.PacketId, LevelHandlers.LevelData);
             proxy.RegisterClassicPacketHandler(LevelFinalizePacket.PacketId, LevelHandlers.LevelFinalize);
 
+            proxy.RegisterClassicPacketHandler(ServerSetBlockPacket.PacketId, LevelHandlers.ServerBlockUpdate);
+
             proxy.RegisterClassicPacketHandler(PositionAndOrientationPacket.PacketId, PlayerHandlers.PositionAndOrientation);
             proxy.RegisterClassicPacketHandler(SpawnPlayerPacket.PacketId, PlayerHandlers.SpawnPlayer);
 
